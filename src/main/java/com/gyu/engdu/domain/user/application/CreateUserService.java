@@ -20,7 +20,7 @@ public class CreateUserService {
   private final ApplicationEventPublisher eventPublisher;
 
   public User create(OAuthProvider provider, String sub, String email) {
-    String name= nameUserService.getRandomName();
+    String name = nameUserService.getRandomName();
     User user = User.of(email, Role.ROLE_USER, sub, name, provider);
     userRepository.save(user);
 
